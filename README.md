@@ -1,2 +1,2 @@
 # Khan_Academy_Projects
-Intro to SQL: Querying and managing data projects from Khan Academy
+Highlighting Projects from Unit 1 - Unit 4 via Course: Intro to SQL: Querying and managing data projects from Khan Academy
