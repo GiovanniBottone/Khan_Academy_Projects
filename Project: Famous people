@@ -1,0 +1,60 @@
+## Instructions
+In this project, you’re going to make your own table with some small set of “famous people”, then make more tables about things they do and join those to create nice human readable lists.
+Authors: What books did they write?
+
+/* Create table listing Authors next to their books, and assign the author a hypothetical "buddy" */
+CREATE TABLE authors (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER);
+    
+INSERT INTO authors (fullname, age) VALUES ("J.K. Rowling", "57");
+INSERT INTO authors (fullname, age) VALUES ("Suzanne Collins", "44");
+INSERT INTO authors (fullname, age) VALUES ("Markus Zusak", "47");
+INSERT INTO authors (fullname, age) VALUES ("Kathryn Stockett", "54");
+
+CREATE table books (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id INTEGER,
+    name TEXT);
+    
+INSERT INTO books (person_id, name) VALUES (1, "Harry Potter and the deathly hallows");
+INSERT INTO books (person_id, name) VALUES (1, "Harry Potter and the half blood prince");
+INSERT INTO books (person_id, name) VALUES (1, "Harry Potter and the order of the phoenix");
+INSERT INTO books (person_id, name) VALUES (1, "Harry Potter and the goblet of fire");
+INSERT INTO books (person_id, name) VALUES (1, "Harry Potter the Prisoner of Azkaban");
+INSERT INTO books (person_id, name) VALUES (1, "Harry Potter and the Chamber of Secrets");
+INSERT INTO books (person_id, name) VALUES (1, "Harry Potter and the Sorcerer's / Philosopher's Stone");
+INSERT INTO books (person_id, name) VALUES (2, "The Hunger Games");
+INSERT INTO books (person_id, name) VALUES (2, "Catching Fire");
+INSERT INTO books (person_id, name) VALUES (2, "Mockingjay");
+INSERT INTO books (person_id, name) VALUES (3, "The Book Thief");
+INSERT INTO books (person_id, name) VALUES (3, "I am the messenger");
+INSERT INTO books (person_id, name) VALUES (3, "Bridge of clay");
+INSERT INTO books (person_id, name) VALUES (4, "The help");
+INSERT INTO books (person_id, name) VALUES (4, "Of Love and Life");
+INSERT INTO books (person_id, name) VALUES (4, "Gute Geister");
+
+CREATE table friends (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person1_id INTEGER,
+    person2_id INTEGER);
+
+INSERT INTO friends (person1_id, person2_id)
+    VALUES (1, 4);
+INSERT INTO friends (person1_id, person2_id)
+    VALUES (2, 3);
+  
+/* Create table listing Authors next to their books*/
+SELECT authors.fullname, books.name
+FROM authors
+JOIN books
+ON authors.id = books.person_id;
+
+/*Assign the author a hypothetical "buddy*/
+SELECT a.fullname, b.fullname
+FROM friends
+JOIN authors a
+ON a.id = friends.person1_id
+JOIN authors b
+ON b.id = friends.person2_id;
