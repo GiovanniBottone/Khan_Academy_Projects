@@ -1,0 +1,26 @@
+## Instructions 
+Create your own store! Your store should sell one type of things, like clothing or bikes, whatever you want your store to specialize in. 
+You should have a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store. 
+You should sell at least 15 items, and use select statements to order your items by price and show at least one statistic about the items.
+
+
+CREATE TABLE clothes (ID INTEGER PRIMARY KEY, clothing_type TEXT, price INTEGER, clothing_matierial TEXT, clothing_style TEXT );
+
+INSERT INTO clothes VALUES (1, "hat", 29, "cloth", "street");
+INSERT INTO clothes VALUES (2, "chain", 49, "rose_gold", "street");
+INSERT INTO clothes VALUES (3, "watch", 49, "rose_gold", "street");
+INSERT INTO clothes VALUES (4, "ring", 29, "rose_gold", "street");
+INSERT INTO clothes VALUES (5, "chain", 49, "silver", "street");
+INSERT INTO clothes VALUES (6, "watch", 49, "silver", "street");
+INSERT INTO clothes VALUES (7, "ring", 29, "silver", "street");
+INSERT INTO clothes VALUES (8, "chain", 49, "gold", "street");
+INSERT INTO clothes VALUES (9, "watch", 49, "gold", "street");
+INSERT INTO clothes VALUES (10,"ring", 29, "gold", "street");
+INSERT INTO clothes VALUES (11, "tee", 19, "vintage", "street");
+INSERT INTO clothes VALUES (12, "long_sleeve", 19, "tye_dye", "street");
+INSERT INTO clothes VALUES (13, "hoodie", 24.99, "grey", "street");
+INSERT INTO clothes VALUES (14, "shorts", 19.99, "black", "street");
+INSERT INTO clothes VALUES (15, "pants", 24.99, "denim", "street");
+
+SELECT * FROM clothes ORDER BY price;
+SELECT * FROM clothes ORDER BY clothing_matierial;
